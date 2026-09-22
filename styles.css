@@ -314,3 +314,69 @@ html,body{background:
   .task-list{gap:12px}
   .onboard{padding-top:42px}
 }
+
+
+/* v3.2 production refinement */
+button{
+  -webkit-appearance:none;
+  appearance:none;
+  color:inherit;
+  text-decoration:none;
+}
+.content{padding-bottom:calc(156px + var(--safe-b))}
+.home-hero{
+  min-height:132px;
+  padding:20px;
+  display:flex;
+  align-items:center;
+}
+.home-hero .hero-copy{max-width:62%}
+.home-hero h1{font-size:29px}
+.hero-illustration{
+  position:absolute;
+  z-index:1;
+  right:12px;
+  bottom:8px;
+  width:36%;
+  min-width:118px;
+  max-width:154px;
+  filter:drop-shadow(0 14px 20px rgba(62,54,140,.13));
+}
+.hero-illustration svg{display:block;width:100%;height:auto}
+.home-hero::after{display:none}
+.task-list + .home-add{display:none}
+.house-card{
+  position:relative;
+  overflow:hidden;
+  color:var(--ink);
+  transition:transform .16s ease,box-shadow .16s ease;
+}
+.house-card:active{transform:scale(.985)}
+.house-card:nth-child(4n+1){background:linear-gradient(145deg,#fff,#f5f2ff)}
+.house-card:nth-child(4n+2){background:linear-gradient(145deg,#fff,#f6fbf1)}
+.house-card:nth-child(4n+3){background:linear-gradient(145deg,#fff,#f1f7ff)}
+.house-card:nth-child(4n+4){background:linear-gradient(145deg,#fff,#fff7f3)}
+.house-card::after{
+  content:"";
+  position:absolute;
+  width:72px;height:72px;border-radius:50%;
+  right:-24px;top:-24px;
+  background:rgba(110,91,246,.06);
+}
+.house-card .cat-icon{position:relative;z-index:1}
+.house-card strong,.house-card span{position:relative;z-index:1;color:inherit}
+.house-card span{color:var(--muted)}
+.setting-row{color:var(--ink)}
+.setting-row svg{width:19px;height:19px;vertical-align:-4px;color:#6254ed}
+.week-card .task{border-radius:0!important;box-shadow:none;border-left:0!important;border-right:0!important;border-top:0!important}
+.week-card .task:last-child{border-bottom:0!important}
+.week-card{box-shadow:0 8px 22px rgba(29,27,73,.045)}
+.bottom-nav{max-width:680px;margin:0 auto}
+@media (display-mode:standalone){
+  .content{padding-bottom:calc(118px + var(--safe-b))}
+  .bottom-nav{bottom:calc(8px + var(--safe-b))}
+}
+@media (min-width:900px){
+  .content{padding-bottom:68px}
+  .hero-illustration{right:24px;width:31%;max-width:175px}
+}
